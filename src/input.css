@@ -1,0 +1,853 @@
+@import "tailwindcss";
+
+
+/* *{
+    @apply m-0 p-0
+} */
+body{
+    @apply font-[jost]
+}
+h1, h2, h3, h4, h5, h6{
+    @apply text-[#2a2a2a] font-[jost] font-medium
+}
+h3{
+    @apply min-xl:text-[28px]
+}
+h4{
+    @apply min-xl:text-2xl
+}
+p{
+    @apply text-base font-[jost] text-[#545454] font-normal
+}
+br{
+    @apply hidden sm:inline
+}
+/****HEADER****/
+header{
+    @apply grid grid-rows-2
+}
+.header-area{
+    @apply w-full fixed bg-white shadow-md z-50
+}
+.header-main, .mobile-nav{
+    @apply py-5 min-sm:border-b min-md:border-[#ddd] min-lg:border-none
+}
+.header-main .menu-wrapper, .mobile-nav .menu-wrapper{
+    @apply min-md:!justify-start min-lg:!justify-between
+}
+.menu-wrapper, .header-info-left ul, .header-info-right ul{
+    @apply flex justify-between items-center
+}
+.header-info-mid{
+    @apply min-lg:!block !hidden
+}
+.header-main .header-info-left{
+    @apply min-lg:!block !hidden
+}
+.header-info-left ul li, .header-info-right ul li{
+    @apply inline-block mx-4 text-lg font-medium
+}
+.header-info-left ul li a,
+.header-info-right ul li a.right{
+    @apply py-6 px-2 hover:text-[#e67118] transition
+}
+/* NAVIGATION DROPDOWN */
+.multipage{
+    @apply absolute w-[150px] top-full shadow-[rgba(0,0,0,0.05)_0px_0px_10px_3px] z-10 bg-white py-2 ease-out transition-all duration-200
+}
+.header-info-right ul li ul.multipage > li {
+    @apply ml-2 block
+}
+.header-info-right ul li:not(:hover) .multipage{
+    @apply hidden
+}
+.multipage a{
+    @apply text-base font-medium text-[#2a2a2a] hover:text-[#e67118] !pb-3 !px-[10px]
+ }
+
+.header-info-right ul li:hover .multipage{
+    @apply block
+}
+
+.header-btn{
+    @apply py-3 px-8 text-base rounded-3xl text-white bg-[#e67118] hover:bg-[#d35400] transition
+}
+/***MOBILE NAV***/
+header .mobile-nav{
+    @apply bg-[#4c4c4c] !block lg:!hidden !border-none fixed mt-16 sm:mt-22 z-30 w-full !ml-0
+}
+#bar-menu, header label{
+    @apply block lg:!hidden
+}
+#bar-menu{
+    @apply opacity-0
+}
+.mobile-nav label.bar-menu{
+    @apply text-white bg-[#222] py-1 px-3 text-[20px] rounded-sm inline-block cursor-pointer m-5 absolute right-0 -top-8
+}
+.menu-bar-icon{
+    @apply font-bold uppercase
+}
+.mobile-nav nav{
+    @apply absolute -top-[1200%] left-0 bg-[#4c4c4c] w-full transition-all duration-300 -z-10 
+}
+.mobile-nav ul {
+    @apply grid grid-cols-1 py-2 -z-10 
+}
+.mobile-nav ul a{
+    @apply block mx-4 px-3 text-base hover:bg-[#ddd] rounded-md py-2 text-white  hover:text-[#2a2a2a] transition duration-300
+}
+
+/****BANNER****/
+swiper-container {
+    @apply w-full h-screen bg-[url(images/hero/h1_hero.jpg)] bg-cover bg-center before:absolute before:w-full before:h-full before:left-0 before:top-0 before:right-0 before:bottom-0 before:bg-[rgba(84,84,84,0.2)]  
+}
+swiper-slide {
+@apply text-center flex flex-col gap-y-[50px] justify-center items-center 
+}
+swiper-slide h1{
+@apply text-4xl max-w-[90%] lg:text-6xl mx-auto sm:max-w-[53%] !text-white 
+}
+swiper-slide span{
+    @apply underline
+}
+.hero-btn{
+    @apply py-4 px-8 text-lg rounded-[41px] text-white bg-[#2a2a2a] hover:bg-transparent hover:text-[#2a2a2a] transition border border-black
+}
+
+/****ABOUT US****/
+
+.about-area{
+    @apply w-full py-16 md:py-32 relative
+}
+.about-main{
+    @apply grid grid-cols-1 lg:grid-cols-2 justify-between gap-x-3
+}
+
+.section-title h2{
+    @apply text-2xl sm:text-3xl lg:text-[40px]  font-medium !block
+}
+.stats {
+    @apply grid sm:grid-cols-2 justify-between
+}
+.single{
+    @apply mx-3
+}
+.single-counter{
+    @apply mb-2
+}
+.single-counter .counter, .single-counter p {
+    @apply   text-[#E67118] text-4xl lg:text-5xl font-semibold mb-3 inline-block uppercase
+}
+.pera-count p{
+    @apply text-[#132E43] text-xl lg:text-2xl 
+}
+
+.about-right p{
+    @apply text-xl text-[#545454] font-normal mb-8
+}
+.about-btn{
+    @apply py-4 px-8 text-lg rounded-[40px] text-white bg-[#E67118] transition 
+}
+.fa-angle-right{
+    @apply relative left-2 top-0.5 group-hover:left-3 transition duration-300
+}
+.about-area2{
+    @apply bg-[#fcf2eb] overflow-hidden
+}
+
+.about-btn2{
+    @apply  py-4 px-8 text-lg rounded-[40px] text-[#e67118] bg-transparent border border-[#e67118] hover:text-white hover:bg-[#e67118] transition
+}
+.about-img{
+    @apply mt-10 lg:mt-0
+}
+
+/***
+ BRAND AREA  
+            ***/
+.brand-area{
+    @apply py-[120px]
+}
+.testimonial, .brands{
+    @apply flex justify-center
+}
+.section-title2{
+    @apply text-center mb-5
+}
+.brands .list{
+    @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 py-12 w-full gap-x-20
+}
+
+/* VISIT TAILOR AREA */
+.visit-tailor-area{
+    @apply bg-[#f2f4f8] lg:flex items-center overflow-hidden pb-10 lg:pb-0
+}
+
+.tailor-offers{
+    @apply bg-[url(images/gallery/visit_bg.jpg)] bg-cover bg-no-repeat bg-center h-[300px] lg:h-[750px] lg:w-[200%]
+}
+.tailor-details{
+    @apply py-5 px-10 lg:pl-20 lg:pr-24 max-w-[90%]
+}
+.tailor-details h2{
+    @apply text-2xl sm:text-3xl lg:text-[44px] font-medium mb-2 text-[#2a2a2a]
+}
+.tailor-details p, .rating p{
+    @apply text-[20px] text-[#545454] font-normal mb-10
+}
+.rating ul li{
+    @apply inline-block mb-7
+}
+.price-wrpper{
+    @apply flex flex-wrap
+}
+.single-price{
+    @apply mr-[50px] mb-16
+}
+.single-price p{
+    @apply font-medium mb-2 text-[#545454]
+}
+.single-price span{
+    @apply text-[#E67118] text-[20px] font-medium
+}
+
+/* OUR SERVICES */
+.our-services{
+    @apply py-14 md:pt-[90px] md:pb-[70px] relative
+}
+.services{
+    @apply sm:grid grid-cols-2 md:grid-cols-3 justify-between mt-[70px]
+}
+.services-inner{
+    @apply px-3
+}
+.single-services{
+    @apply mb-[30px] 
+}
+
+.single-services .services-icon img{
+    @apply text-center mb-5
+}
+
+.services-cap h5{
+    @apply text-[20px] font-medium mb-5 
+}
+.services-cap a{
+    @apply hover:text-[#E67118]
+}
+.services-cap p{
+    @apply font-light text-[#6A6063]
+}
+
+/* CLIENT TESTIMONIALS */
+.client-testimonials{
+    @apply bg-[#f1c4a3] py-15 md:py-[120px] overflow-hidden
+}
+.testimonial-cards{
+    @apply sm:grid grid-cols-2 lg:grid-cols-3 gap-x-10 mt-20
+}
+.single-testimonial{
+    @apply bg-white pt-[50px] pb-10 px-[35px] h-[405px]
+}
+.single-testimonial .rating ul li i, .gallery-info .rating li i{
+    @apply text-[#e67118] text-sm
+}
+.single-testimonial h3 a{
+    @apply text-lg font-medium mb-5 block
+}
+.single-testimonial .p-pera{
+    @apply text-lg text-[#545454] mb-10
+}
+
+/* VIDEO SECTION */
+.video-section{
+    @apply bg-[#FCF2EB] overflow-hidden pt-20 lg:pt-0
+}
+.section-overlay{
+    @apply lg:flex items-center  lg:w-[90%]
+}
+.section-overlay p{
+    @apply text-base md:text-lg w-[55%] lg:w-full
+}
+.section-overlay .section-title h3{
+    @apply text-3xl  font-medium w-[50%] lg:w-full
+}
+.video-area{
+    @apply   lg:ml-16 overflow-hidden mt-16 lg:mt-0
+}
+.video-wrap{
+    @apply relative w-[960px]
+}
+.video-wrap img{
+    @apply  bg-cover w-[45%] sm:w-[40%] h-[60vh] md:w-[70%] lg:w-full md:h-[95vh] lg:!h-full
+} 
+.video-area .video-icon{
+    @apply absolute top-[30%] sm:left-[15%] md:left-[35%] lg:top-[40%] translate-y-[50%] left-[18%] lg:left-[30%] 
+}
+.video-area .video-icon a{
+    @apply text-[#e67118] w-[100px] h-[100px] inline-block text-center leading-[100px] bg-white rounded-[50%] after:absolute after:-left-8 after:-top-8 after:right-0 after:border-[80px] after:border-solid after:rounded-[50%] after:border-white after:bg-black after:opacity-30 hover:bg-[#e67118] hover:text-white transition
+}
+
+/* WANT TO WORK */
+.want-to-work-area{
+    @apply bg-cover bg-no-repeat bg-center bg-[#1a1a1a] py-20
+}
+.want-to-work-area .want-to-work-caption h2{
+    @apply text-[30px] font-semibold mb-3 text-white 
+}
+.want-to-work-area .want-to-work-caption p{
+    @apply text-lg text-[#dedede]
+}
+
+/* FOOTER */
+footer{
+    @apply bg-[#f5f6f7]
+}
+.footer-area{
+    @apply pt-12 lg:pt-[99px] h-fit lg:h-[70vh]
+}
+.single-footer{
+    @apply mb-10 lg:mb-20 h-fit
+}
+.footer-logo{
+    @apply mb-9
+}
+.footer-text h4{
+    @apply text-[20px] font-semibold text-[#1a1a1a] mb-10
+}
+.footer-area .footer-text p{
+    @apply text-base text-[#5e5e5e]
+}
+.footer-area .footer-pera p{
+    @apply mb-5
+}
+.footer-text ul li{
+    @apply mb-4
+}
+.footer-text ul li a{
+    @apply text-[#5E5E5E] font-light text-base underline decoration-1 decoration-transparent hover:decoration-current transition
+}
+.number a{
+    @apply !block !text-2xl !text-[#e67118] !font-semibold !decoration-2
+}
+.number2 a{
+    @apply mb-1 !block !text-sm !text-[#1a1a1a]
+}
+.footer-social li, .social-icons li{ 
+    @apply inline-block
+}
+.footer-social li a, .social-icons li a {
+    @apply inline-block text-center !text-[#bcbcbc] p-1 
+}
+.footer-social li a i{
+    @apply group-hover:rotate-y-180 transition-transform !duration-300
+}
+.footer-area .footer-form{
+    @apply mt-10
+}
+.subscribe_form{
+    @apply relative
+}
+.subscribe_form input{
+    @apply w-full h-14 py-[10px] px-5 border border-[#e67118] text-[#5e5e5e] bg-white rounded-[30px] outline-none focus:outline-0 focus-within:outline-offset-0
+}
+.form-icon button{
+    @apply absolute top-0 right-0 bg-none border-0 cursor-pointer py-5 px-[22px] rounded-br-[3px] rounded-tr-[3px]
+}
+.footer-bottom-area .footer-border{
+    @apply pt-[70px] pb-0.5
+}
+.footer-bottom-area .footer-copy-right p a,.footer-bottom-area .footer-copy-right p i {
+    @apply text-[#E67118]
+}
+
+.back-top{
+    @apply block h-10 w-10 bg-[#e67118] right-8 bottom-5 fixed text-white text-[20px] text-center rounded-[50%] leading-10 border-2 border-transparent shadow-[0_0_10px_3px_rgba(108,98,98,0.2)]
+}
+.back-top .wrapper{
+    @apply relative
+}
+.back-top .wrapper .arrows-container{
+    @apply absolute text-center -bottom-1 mx-auto block right-2
+}
+.back-top .wrapper .arrows-container .arrow{
+    @apply p-[7px] shadow-[inset_2px_-2px_#fff]  opacity-100 absolute  
+}
+.back-top .wrapper .arrows-container .arrow-one{
+    @apply [animation:arrowMovement_3s_ease-in-out_infinite]
+}
+.back-top .wrapper .arrows-container .arrow-two{
+    @apply [animation:arrowMovement_4s_ease-in-out_infinite]
+}
+
+
+
+/********************
+ * WHAT WE DO PAGE
+ ********************/
+
+.hero-section{
+    @apply bg-[#f2f4f86b]
+}
+.hero-section .hero-bg{
+    @apply relative z-0 w-[100%] h-[480px] bg-no-repeat bg-cover bg-center  before:absolute before:inset-0 before:bg-[rgba(84,84,84,0.6)] before:z-[-1] before:content-[''] before:bg-no-repeat
+}
+.hero-section .we-do-bg{
+    @apply bg-[url(images/hero/h2_hero1.jpg)]
+}
+.hero-caption h1{
+    @apply text-4xl md:text-6xl font-medium mb-5 text-white
+}
+.hero-caption p{
+    @apply text-xl md:text-2xl text-white font-normal mb-0 
+}
+
+
+/*************
+ * POJECT PAGE
+ *************/
+.hero-section .project-bg{
+    @apply bg-[url(images/hero/h2_hero2.jpg)]
+}
+.guest-house{
+    @apply pt-24 pb-18
+}
+.gallery{
+    @apply grid md:grid-cols-2 gap-5
+}   
+.gallery .single-location{
+    @apply relative before:absolute before:left-0 before:bottom-0 before:right-0 before:w-full before:h-full before:bg-[rgba(0,0,0,0.3)]  before:z-0 before:opacity-0 before:invisible before:ease-out before:duration-[400ms] transition-all
+}
+.gallery .single-location:hover{
+    @apply before:opacity-100 before:visible 
+}
+.gallery .single-location img{
+    @apply w-full h-[300px] lg:h-[517px] 
+}
+.gallery .single-location .gallery-info{
+    @apply transition-all absolute left-[60px] bottom-[25px] z-10 opacity-0 invisible group-hover:visible group-hover:opacity-100
+}
+.gallery .single-location .gallery-info h3{
+    @apply transition-all text-white inline-block text-[34px] font-medium
+}
+.gallery .single-location .gallery-info p{
+    @apply font-light text-white text-base mb-4
+}
+
+
+/*************
+ * CONTACT PAGE
+ *************/
+ .hero-section .contact-bg{
+    @apply bg-[url(images/hero/h2_hero3.jpg)]
+}
+.contact-section{
+    @apply pt-32 pb-24
+}
+.contact-section .gm-container{
+    @apply w-full h-full table bg-[#e8eaed] relative left-0 top-0
+}
+.contact-section .gm-container .gm-content{
+    @apply rounded-[1px] px-[10%] static align-middle table-cell
+}
+.contact-title{
+    @apply text-[27px] font-semibold mb-5
+}
+.form-contact .form-group{
+    @apply mb-[30px] 
+}
+.form-contact .form-control {
+    @apply border border-[#e5e6e9] pl-5 text-sm bg-transparent
+}
+.form-contact textarea{
+    @apply h-full
+}
+textarea.form-control{
+    @apply min-h-[calc(1.5em+0.75em+2px)] w-full
+}
+.form-control{
+    @apply block w-full px-3 py-1.5 text-base font-normal leading-6 text-[#212529] 
+    bg-white border-2 border-[#ced4da] 
+    appearance-none transition duration-150 ease-in-out
+}
+input, input:focus, textarea, textarea:focus{
+    @apply outline-0
+}
+[type=submit]:not(:disabled), button:not(:disabled) {
+    @apply cursor-pointer
+}
+.form-btn{
+    @apply bg-white text-[#e67118] inline-block py-4 px-10  text-sm font-normal border border-[#e67118] text-center uppercase hover:bg-[#e67118] hover:text-white transition-all duration-300   
+}
+.contact-info{
+    @apply mb-6
+}
+.media{
+    @apply flex 
+}
+.contact-info__icon{
+    @apply mr-5
+}
+.contact-info__icon i, .contact-info__icon span{
+    @apply text-[27px] text-[#8f9195]
+}
+
+/*************
+ * BLOG PAGE
+ *************/
+.blog_area{
+    @apply py-[120px]
+}
+.blog_main{
+    @apply flex flex-col lg:flex-row
+}
+.blog_item{
+    @apply mb-[50px]
+}
+.blog_item_img{
+    @apply relative
+}
+.card-img{
+    @apply w-full
+}
+.blog_area a{
+    @apply transition-all duration-400 
+}
+.blog_item_img .blog_item_date {
+    @apply absolute -bottom-2.5 left-2.5 block !text-white bg-[#e67118] py-2 px-3.75 rounded-md min-md:-bottom-5 min-md:left-10 min-md:py-3 min-md:px-7.5 hover:bg-transparent
+}
+.blog_item_img .blog_item_date h3{
+    @apply text-2xl font-semibold text-white mb-0 min-md:text-3xl
+}
+.blog_item_img .blog_item_date p{
+    @apply text-lg text-white mb-0
+}
+.blog_details{
+    @apply pt-7.5 pb-5 pl-2.5 shadow-[0px_10px_20px_0px_rgba(221,221,221,0.3)] min-md:pt-[60px] min-md:pr-7.5 min-md:pb-8.75 min-md:pl-8.75
+}
+.blog_details a{
+    @apply inline-block text-[#080808]
+}
+.blog_details .blog_head{
+    @apply text-[#2d2d2d] text-lg mb-2 font-semibold min-md:text-2xl min-md:mb-3.75
+}
+.blog_details p{
+    @apply mb-7.5
+}
+.blog-info-link::after{
+    @apply clear-both table
+}
+.blog-info-link li{
+    @apply text-sm float-left
+}
+.blog-info-link li::after{
+    @apply content-["|"] px-2.5
+}
+.blog-info-link li:last-child{
+    @apply after:content-[""]
+}
+.blog-info-link li a, .reply-btn{
+    @apply text-[#999999] hover:text-[#e67118] transition-all duration-300
+}
+
+.blog-pagination{
+    @apply mt-20 !justify-center !flex
+}
+.pagination{
+    @apply flex pl-0
+}
+.blog-pagination .page-link{
+    @apply text-sm relative block text-center -ml-0.25 leading-11.25 w-11.25 h-11.25 text-[#8a8a8a] border border-[#f0e9ff] mr-2.5
+}
+.blog_right_sidebar .single_sidebar_widget{
+    @apply mb-7.5 bg-[#fbf9ff] p-7.5 
+}
+.input-group {
+    @apply relative flex flex-wrap items-stretch w-full
+}
+.blog_right_sidebar .search_widget .form-control {
+    @apply h-[50px] text-sm text-[#999999] pl-5
+    border-[#f0e9ff]
+}
+.blog_right_sidebar .search_widget .input-group button {
+    @apply cursor-pointer bg-[#e67118] border border-solid border-[#999999]
+}
+.blog-btn{
+    @apply absolute py-2.75 px-5 top-0 right-0 text-white
+}
+.blog_right_sidebar .widget_title {
+  @apply text-[20px] font-semibold mb-10 after:content-[""] after:block after:pt-3.75 border-b-2 border-[#f0e9ff] 
+}
+.blog_right_sidebar .post_category_widget .cat-list li {
+    @apply border-b-2 border-[#f0e9ff]  pb-3 transition-all duration-300
+}
+.blog_right_sidebar .post_category_widget .cat-list li a {
+    @apply text-lg !text-[#888888] hover:!text-[#e67118] transition-all duration-300
+}
+.popular_post_widget .post_item .media-body{
+    @apply ml-4 
+}
+.popular_post_widget .post_item .media-body a h3, .posts-list .blog-author h4, .user h5 a{
+    @apply font-semibold hover:!text-[#e67118] transition-all duration-300
+}
+.blog_right_sidebar .tag_cloud_widget ul li {
+    @apply inline-block
+}
+.blog_right_sidebar .tag_cloud_widget ul li a {
+    @apply  inline-block border border-solid border-[#eeeeee] bg-white py-1 px-5 mb-2 mr-0.75 transition-all duration-300 text-[#888888] text-sm hover:!bg-[#e67118] hover:text-white
+}
+.blog_right_sidebar .instagram_feeds li {
+    @apply !w-[33.33%] float-left mb-3.75
+}
+
+/*************
+ * BLOG DETAILS
+ *************/
+.blog_left_sidebar .posts-list{
+    @apply px-4
+ }
+ .posts-list .blog_details{
+    @apply !px-0
+ }
+ .single-post .quote-wrapper {
+    @apply min-md:p-7.5 bg-[rgba(130,139,178,0.1)] p-4 text-[#888888] italic my-6 
+ }
+ .single-post .quotes {
+    @apply min-md:p-6 min-md:!pl-7.5 p-4 !pl-5 border-l-2 bg-white
+}
+.single-post .navigation-top {
+    @apply pt-4 border-t border-t-[#f0e9ff]
+}
+.like-info p{
+    @apply text-sm
+}
+.social-icons li a {
+    @apply hover:text-[e67118] transition-all duration-300
+}
+.blog_left_sidebar .navigation-area {
+    @apply mt-14 pb-7.5 border-b border-[#eee]
+}
+.blog_left_sidebar .navigation-area .thumb{
+    @apply mr-5
+}
+.detials a h4 {
+    @apply text-[#2d2d2d] group-hover:!text-[#e67118] duration-300
+}
+.posts-list .blog-author {
+    @apply py-10 px-7.5 bg-[#fbf9ff] mt-12.5
+}
+.posts-list .blog-author img{
+    @apply w-[90px] h-[90px] mr-7.5 rounded-[50%]
+}
+.posts-list .blog-author .media-body a{
+    @apply inline-block
+}
+.posts-list .blog-author .media-body p{
+    @apply mb-0 text-sm
+}
+.posts-list .comments-area, .comment-form{
+    @apply border-t border-[#eee] bg-transparent py-11 mt-12.5
+}
+.comments-area h4{
+    @apply text-lg mb-9
+}
+.comments-area .comment-list{
+    @apply pb-12
+}
+.comments-area .thumb{
+    @apply mr-5
+}
+.comment-list .comment {
+    @apply mb-2.5 !text-[#777777] text-sm
+}
+.comment h5{
+    @apply text-base mb-0 !font-medium
+}
+.date{
+    @apply  text-sm text-[#999999] ml-5
+}
+.comment-form h4{
+    @apply text-lg mb-10 font-semibold
+}
+
+/*************
+ * BLOG ELEMENTS
+ *************/
+.sample-text-area{
+    @apply bg-white pt-25 pb-17.5 
+}
+.text-heading{
+    @apply mb-7.5 text-2xl
+}
+.sample-text{
+    @apply text-base
+}
+b, sup, sub, u, del{
+    @apply text-[#1f2b7b]
+}
+.button-area .button-area-border{
+    @apply py-17.5 px-3.75 border-t border-[#eeeeee]
+}
+.button-group-area .genric-btn{
+    @apply mr-2 mt-2.5 last:mr-0
+}
+.genric-btn{
+    @apply inline-block outline-0 leading-10 px-7 text-[0.8em] text-center decoration-0 font-medium cursor-pointer transition-all duration-300 border border-solid border-transparent 
+}
+.genric-btn.default{
+    @apply text-[#415094] bg-[#f9f9ff]
+}
+.genric-btn.primary{
+    @apply text-white bg-[#1f2b7b] hover:bg-white hover:text-[#1f2b7b] hover:border-[#1f2b7b]
+}
+.genric-btn.success{
+    @apply text-white bg-[#4cd3e3] hover:bg-white hover:text-[#4cd3e3] hover:border-[#4cd3e3]
+}
+.genric-btn.info{
+    @apply text-white bg-[#38a4ff] hover:bg-white hover:text-[#38a4ff] hover:border-[#38a4ff]
+}
+.genric-btn.warning{
+    @apply text-white bg-[#f4e700] hover:bg-white hover:text-[#f4e700] hover:border-[#f4e700]
+}
+.genric-btn.danger{
+    @apply text-white bg-[#f44a40] hover:bg-white hover:text-[#f44a40] hover:border-[#f44a40]
+}
+.genric-btn.link{
+    @apply bg-[#f9f9ff] text-[#415094] hover:bg-white
+}
+.genric-btn.disable{
+    @apply bg-[#f9f9ff] text-[rgba(34,34,34,0.3)] cursor-not-allowed
+}
+.genric-btn.default-border{
+    @apply hover:text-[#415094] text-[#f9f9ff] bg-[#f9f9ff]
+}
+.genric-btn.primary-border{
+    @apply hover:text-white hover:bg-[#1f2b7b] bg-white text-[#1f2b7b] border-[#1f2b7b] hover:border-transparent
+}
+.genric-btn.success-border{
+    @apply hover:text-white hover:bg-[#4cd3e3] bg-white text-[#4cd3e3] border-[#4cd3e3] hover:border-transparent
+}
+.genric-btn.info-border{
+    @apply hover:text-white hover:bg-[#38a4ff] bg-white text-[#38a4ff] border-[#38a4ff] hover:border-transparent
+}
+.genric-btn.warning-border{
+    @apply hover:text-white hover:bg-[#f4e700] bg-white text-[#f4e700] border-[#f4e700] hover:border-transparent
+}
+.genric-btn.danger-border{
+    @apply hover:text-white hover:bg-[#f44a40] bg-white text-[#f44a40] border-[#f44a40] hover:border-transparent
+}
+.genric-btn.link-border{
+    @apply hover:bg-[#f9f9ff] text-[#415094] bg-white
+}
+.genric-btn.disable{
+    @apply bg-[#f9f9ff] text-[rgba(34,34,34,0.3)] cursor-not-allowed
+}
+.genric-btn.border-circle{
+    @apply rounded-[20px]
+}
+.genric-btn.xlarge{
+    @apply px-10 leading-12.5
+}
+.genric-btn.large{
+    @apply leading-11.25
+}
+.genric-btn.medium{
+    @apply leading-7.5
+}
+.genric-btn.small{
+    @apply leading-6.25
+}
+.section-top-border{
+    @apply py-12.5 border-t border-solid border-[#eeeeee]
+}
+.section-top-border h3{
+    @apply text-3xl  font-medium 
+}
+.section-top-border .single-defination{
+    @apply mb-5 md:mb-0
+}
+.single-defination h4{
+    @apply text-2xl font-medium
+}
+.section-top-border .quotes{
+    @apply min-md:p-6 min-md:!pl-7.5 p-4 !pl-5 border-l-2 border-[#1f2b7b] bg-[#f9f9ff]
+}
+.progress-table-wrap{
+    @apply overflow-x-scroll
+}
+.progress-table{
+    @apply bg-[#f9f9ff]
+}
+.progress-table .table-head{
+    @apply flex 
+}
+.progress-table .table-row{
+    @apply flex py-3.75 border-t border-[#edf3fd]
+}
+.progress-table .table-head .serial, .progress-table .table-head .country, .progress-table .table-head .visit, .progress-table .table-head .percentage {
+    @apply text-[#415094] leading-10 uppercase font-medium
+}
+.progress-table .table-row .serial, .progress-table .table-row .country, .progress-table .table-row .visit, .progress-table .table-row .percentage{
+    @apply flex items-center
+}
+.progress-table .serial{
+    @apply w-[12%] pl-7.5 
+}
+.progress-table  .country{
+    @apply w-[28%] 
+}
+.progress-table .visit{
+    @apply w-[20%]
+}
+.progress-table .percentage{
+    @apply w-[40%] pr-12.5
+}
+.progress-table .country img{
+    @apply mr-3.75
+}
+.progress-table .table-row .percentage .progress{
+    @apply w-4/5
+}
+.progress-table .table-row .percentage .progress .progress-bar {
+    @apply h-1.25 leading-1.25 
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-1{
+    @apply bg-[#6382e6]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-2{
+    @apply bg-[#e66686]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-3{
+    @apply bg-[#f09359]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-4{
+    @apply bg-[#73fbaf]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-5{
+    @apply bg-[#73fbaf]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-6{
+    @apply bg-[#6382e6]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-7{
+    @apply bg-[#a367e7]
+}
+.progress-table .table-row .percentage .progress .progress-bar.color-8{
+    @apply bg-[#e66686]
+}
+.gallery-item{
+    @apply  flex flex-wrap
+}
+.gallery-item > div{
+    @apply px-2
+}
+.single-gallery-image{
+    @apply mt-7.5 !bg-cover !bg-no-repeat !bg-center h-50 w-full
+}
+
+
+/***Lychee Iframe****/
+.lychee-btn{
+    @apply py-3 px-8 text-base rounded-3xl text-white bg-[#00000065] hover:bg-[#d35400] transition
+}
