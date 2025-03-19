@@ -704,12 +704,6 @@
   .m-0 {
     margin: calc(var(--spacing) * 0);
   }
-  .m-5 {
-    margin: calc(var(--spacing) * 5);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
   .mt-2\.5 {
     margin-top: calc(var(--spacing) * 2.5);
   }
@@ -757,6 +751,9 @@
   }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
+  }
+  .-ml-15 {
+    margin-left: calc(var(--spacing) * -15);
   }
   .box-border {
     box-sizing: border-box;
@@ -857,20 +854,11 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
   }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
   .w-2\/5 {
     width: calc(2/5 * 100%);
-  }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
   }
   .w-3\/5 {
     width: calc(3/5 * 100%);
@@ -878,23 +866,11 @@
   .w-3\/10 {
     width: calc(3/10 * 100%);
   }
-  .w-4 {
-    width: calc(var(--spacing) * 4);
-  }
   .w-4\/5 {
     width: calc(4/5 * 100%);
   }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
-  }
   .w-7\/10 {
     width: calc(7/10 * 100%);
-  }
-  .w-9 {
-    width: calc(var(--spacing) * 9);
-  }
-  .w-11 {
-    width: calc(var(--spacing) * 11);
   }
   .w-11\/20 {
     width: calc(11/20 * 100%);
@@ -943,9 +919,6 @@
   }
   .basis-\[66\.7\%\] {
     flex-basis: 66.7%;
-  }
-  .basis-\[70\%\] {
-    flex-basis: 70%;
   }
   .basis-auto {
     flex-basis: auto;
@@ -2235,9 +2208,6 @@
   .\[keywords\:node-addon-api\] {
     keywords: node-addon-api;
   }
-  .\[r2\:���\b �\] {
-    r2: � ��;
-  }
   .backface-hidden {
     backface-visibility: hidden;
   }
@@ -2332,6 +2302,11 @@
   .peer-checked\:\!top-\[200\%\] {
     &:is(:where(.peer):checked ~ *) {
       top: 200% !important;
+    }
+  }
+  .sm\:ml-0 {
+    @media (width >= 40rem) {
+      margin-left: calc(var(--spacing) * 0);
     }
   }
   .min-sm\:flex {
@@ -2507,6 +2482,11 @@
   .lg\:w-\[66\.6666667\%\] {
     @media (width >= 64rem) {
       width: 66.6666667%;
+    }
+  }
+  .lg\:basis-\[70\%\] {
+    @media (width >= 64rem) {
+      flex-basis: 70%;
     }
   }
   .lg\:gap-x-4 {

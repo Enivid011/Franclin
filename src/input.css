@@ -265,7 +265,7 @@ swiper-slide span{
     @apply bg-[#FCF2EB] overflow-hidden pt-20 lg:pt-0
 }
 .section-overlay{
-    @apply lg:flex items-center  lg:w-[90%]
+    @apply lg:flex items-center  lg:w-[90%] 
 }
 .section-overlay p{
     @apply text-base md:text-lg w-[55%] lg:w-full
