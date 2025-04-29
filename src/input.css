@@ -10,11 +10,23 @@ body{
 h1, h2, h3, h4, h5, h6{
     @apply text-[#2a2a2a] font-[jost] font-medium
 }
+h1{
+    @apply text-[40px]
+}
+h2{
+    @apply text-[32px]
+}
 h3{
     @apply min-xl:text-[28px]
 }
 h4{
     @apply min-xl:text-2xl
+}
+h5{
+    @apply text-xl
+}
+h6{
+    @apply text-base
 }
 p{
     @apply text-base font-[jost] text-[#545454] font-normal
@@ -486,6 +498,9 @@ input, input:focus, textarea, textarea:focus{
 .media{
     @apply flex 
 }
+ .media-body h3{
+    @apply text-lg
+}
 .contact-info__icon{
     @apply mr-5
 }
@@ -845,9 +860,57 @@ b, sup, sub, u, del{
 .single-gallery-image{
     @apply mt-7.5 !bg-cover !bg-no-repeat !bg-center h-50 w-full
 }
+.typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
+    @apply text-[#828bb2]
+}
+ul.unordered-list li{
+    @apply leading-7 pl-7.5 relative before:absolute before:w-3.5 before:h-3.5 before:border-[3px] before:border-[#1f2b7b] before:rounded-[50%] before:top-1 before:left-0 before:content-normal
+}       
+.ordered-list{
+    @apply ml-7.5 list-decimal 
+}
+.ordered-list .zero-list{
+    @apply  list-[decimal-leading-zero] font-medium leading-7
+}
+.ordered-list li{
+    @apply !text-[#828bb2] marker:text-[#1f2b7b]
+}
 
+.single-input, .single-textarea, .single-input-primary, .single-input-accent, .single-input-secondary {
+    @apply block w-full leading-10 border-0 outline-0 bg-[#f9f9ff] px-5
+}
+.input-group-icon{
+    @apply relative bg-[#f9f9ff]
+}
+.input-group-icon .icon {
+    @apply absolute left-1.25 top-0 leading-10 w-10 z-40
+}
+.form-select{
+    @apply h-10 w-full border-0 outline-0 ml-5 
+}
 
-/***Lychee Iframe****/
-.lychee-btn{
-    @apply py-3 px-8 text-base rounded-3xl text-white bg-[#00000065] hover:bg-[#d35400] transition
+.single-textarea {
+    @apply h-25 resize-none
+}
+.single-input-primary, .single-input-accent, .single-input-secondary{
+    @apply border border-solid border-transparent 
+}
+.single-input-primary{
+    @apply focus:border-[#1f2b7b]
+}
+.single-input-accent{
+    @apply focus:border-[#eb6b55]
+}
+.single-input-secondary{
+    @apply focus:border-[#f09359]
+}
+.switch-wrap{
+    @apply mb-2.5
+}
+
+.switch input:checked +  .slider.primary { 
+    @apply  bg-[#1f2b7b] 
+}
+.switch input:checked +  .slider.confirm { 
+    @apply  bg-[#4cd3e3] 
 }

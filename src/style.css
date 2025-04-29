@@ -50,3 +50,121 @@ html {
     0%, 100% { transform: translateY(10px) rotate(130deg); opacity: 1; }
     50% { transform: translateY(0px) rotate(130deg); opacity: 0.5; }
   }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 18px;    
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(23px);
+}
+
+.primary-checkbox, .confirm-checkbox,.disabled-checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: #f9f9ff;
+    position: relative;
+    cursor: pointer;
+}
+.disabled-checkbox input:disabled{
+    cursor: not-allowed;
+}
+.primary-checkbox input, .confirm-checkbox input, .disabled-checkbox input{
+position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.primary-checkbox input:checked+label {
+    background: url(../src/images/elements/primary-check.png) no-repeat center center / cover;
+    border: none;
+}
+.confirm-checkbox input:checked+label, .disabled-checkbox input:checked+label {
+    background: url(../src/images/elements/success-check.png) no-repeat center center / cover;
+    border: none;
+}
+.primary-checkbox label, .confirm-checkbox label, .disabled-checkbox label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9ff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.primary-radio, .confirm-radio,.disabled-radio {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: #f9f9ff;
+    position: relative;
+    cursor: pointer;
+}
+.disabled-radio input:disabled{
+    cursor: not-allowed;
+}
+.primary-radio input, .confirm-radio input, .disabled-radio input{
+position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.primary-radio input:checked+label {
+    background: url(../src/images/elements/primary-radio.png) no-repeat center center / cover;
+    border: none;
+}
+.confirm-radio input:checked+label, .disabled-radio input:checked+label {
+    background: url(../src/images/elements/success-radio.png) no-repeat center center / cover;
+    border: none;
+}
+.primary-radio label, .confirm-radio label, .disabled-radio label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9ff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    z-index: 1;
+}
